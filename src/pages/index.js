@@ -8,17 +8,37 @@ export default( { data } ) => {
 
   const feeds = [
     ...data.allFeedBeepBeep.edges,
-    ...data.allFeedStreetFight.edges
-  ].sort ( function (a, b){
-       return new Date(b.node.isoDate) - new Date(a.node.isoDate);
-});
+    ...data.allFeedStreetFight.edges,
+    ...data.allFeedSrslyWrong.edges,
+    ...data.allFeedMandatoryOt.edges,
+    ...data.allFeedTrashFuture.edges,
+    ...data.allFeedTheAntifada.edges,
+    ...data.allFeedChapoTrap.edges,
+    ...data.allFeedTrillbillyWorkers.edges,
+    ...data.allFeedMajorityReport.edges,
+    ...data.allFeedDumbBitch.edges,
+    ...data.allFeedCurrentAffairs.edges,
+    ...data.allFeedPodDamn.edges
+  ].sort( function( a, b ) {
+    return new Date( b.node.isoDate ) - new Date( a.node.isoDate );
+  } );
 
-  var nowPlaying = feeds['0']
-
-  const playls = feeds.map(e => ({url: e.node.enclosure.url, title: e.node.title, artist: e.node.itunes.author}))
-
+  const playls = feeds.map( e => ( { url: e.node.enclosure.url, title: e.node.title } ) )
+  const somas = [
+    {
+      url: 'http://ice2.somafm.com/fluid-128-mp3',
+      title: 'Fluid'
+    }, {
+      url: 'http://ice2.somafm.com/groovesalad-256-mp3',
+      title: 'Groove Salad'
+    }, {
+      url: 'http://ice2.somafm.com/spacestation-128-aac',
+      title: 'Space Station Soma'
+    }
+  ]
 
   return ( <Layout >
+
     <SEO title="southporch radio" keywords={[
         `radio`,
         `dirtbag`,
@@ -27,28 +47,39 @@ export default( { data } ) => {
         'twitter',
         'southporch'
       ]}/>
-      <a href={nowPlaying.node.link}>
-        <h1>{nowPlaying.node.title}</h1>
-      </a>
-      <small>{nowPlaying.node.pubDate}</small>
-      <p style={{
-          textTransform: 'lowercase',
-          marginTop: '.725em'
-        }}>{nowPlaying.node.contentSnippet}</p>
-        <div style={{padding:'4rem'}}>
-        <MediaPlayer
-          playlist={playls}
-          autoplay={true}
-          controls={['playpause', 'backskip', 'forwardskip', 'progress']}
+    <div style={{
+        backgroundColor: '#bbb',
+        marginTop: '82vh',
+        marginBottom: '100vh',
+        borderWidth: '4px',
+        borderStyle: 'solid',
+        borderColor: "#b73490"
+      }}>
+      <MediaPlayer
+        autoplay={true}
+        autoplayDelayInSeconds={3}
+        controls={[ 'playpause', 'backskip', 'forwardskip', 'volume', 'progress' ]}
+        playlist={playls}
+        gap/>
+      <MediaPlayer
+        autoplay={true}
+        controls={[ 'playpause', 'volume', 'forwardskip',  ]}
+        playlist={somas}
+        mediaElementRef={media => {
+          media.volume = 0.1
+        }}
         />
-        </div>
-        <div style={{marginTop: '1rem'}}>
+
+    <div style={{
+        marginTop: '1rem',
+        padding: '1rem'
+      }}>
       <h2>Playlist</h2>
       <table>
         <thead>
           <tr>
-          <th>author</th>
-          <th>date</th>
+            <th>date</th>
+            <th>title</th>
           </tr>
         </thead>
         <tbody>
@@ -56,14 +87,14 @@ export default( { data } ) => {
             feeds.map( ( {
               node
             }, index ) => ( <tr key={index}>
-              <td>{node.itunes.author}</td>
-              <td>{node.isoDate}</td>
+              <td>{node.pubDate.slice(0,11)}</td>
               <td>{node.title}</td>
             </tr> ) )
           }
         </tbody>
       </table>
     </div>
+  </div>
   </Layout> )
 }
 
@@ -105,6 +136,187 @@ query {
       }
     }
   }
+  allFeedSrslyWrong(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+        itunes {
+          author
+        }
+      }
+    }
+  }
+    allFeedMandatoryOt(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+        itunes {
+          author
+        }
+      }
+    }
+  }
+  allFeedTrashFuture(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+        itunes {
+          author
+        }
+      }
+    }
+  }
+    allFeedTheAntifada(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+        itunes {
+          author
+        }
+      }
+    }
+  }
 
+    allFeedChapoTrap(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+        itunes {
+          author
+        }
+      }
+    }
+
+  }
+    allFeedTrillbillyWorkers(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+        itunes {
+          author
+        }
+      }
+    }
+
+  }   allFeedMajorityReport(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+
+      }
+    }
+
+  }    allFeedDumbBitch(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+        itunes {
+          author
+        }
+      }
+    }
+
+  }  allFeedCurrentAffairs(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+        itunes {
+          author
+        }
+      }
+    }
+
+  }  allFeedPodDamn(limit:3) {
+    totalCount
+    edges {
+      node {
+        title
+        isoDate
+        link
+        pubDate
+        enclosure {
+          url
+        }
+        contentSnippet
+        itunes {
+          author
+        }
+      }
+    }
+
+  }
 }
   `

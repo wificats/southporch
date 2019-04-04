@@ -5,6 +5,7 @@ module.exports = {
     author: `wificat`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -32,13 +33,6 @@ module.exports = {
       options: {
         url: `https://beepbeeplettuce.podbean.com/feed.xml`,
         name: `BeepBeep`,
-        // Optional
-        // Read parser document: https://github.com/bobby-brennan/rss-parser#readme
-        // parserOption: {
-        //  customFields: {
-        //    item: ['itunes:duration']
-        //  }
-        //}
     }
   },
     {
@@ -46,13 +40,83 @@ module.exports = {
       options: {
         url: `http://feeds.feedburner.com/streetfightradio.rss`,
         name: `StreetFight`,
-        // Optional
-        // Read parser document: https://github.com/bobby-brennan/rss-parser#readme
-        // parserOption: {
-        //  customFields: {
-        //    item: ['itunes:duration']
-        //  }
-        //}
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://feeds.feedburner.com/srslywrong.rss`,
+        name: `SrslyWrong`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feeds.soundcloud.com/users/soundcloud:users:465360117/sounds.rss`,
+        name: `MandatoryOT`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://trashfuturepodcast.podbean.com/feed.xml`,
+        name: `TrashFuture`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feeds.fans.fm/105.xml`,
+        name: `TheAntifada`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://redscarepodcast.libsyn.com/rss`,
+        name: `RedScare`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feeds.soundcloud.com/users/soundcloud:users:211911700/sounds.rss`,
+        name: `ChapoTrap`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feeds.soundcloud.com/users/soundcloud:users:300222802/sounds.rss`,
+        name: `TrillbillyWorkers`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feeds.feedburner.com/majorityreport.rss`,
+        name: `MajorityReport`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://feed.podbean.com/dumbbitchmedia/feed.xml`,
+        name: `DumbBitch`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://rss.simplecast.com/podcasts/5716/rss`,
+        name: `CurrentAffairs`,
+    }
+  },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `http://feeds.soundcloud.com/users/soundcloud:users:324031914/sounds.rss`,
+        name: `PodDamn`,
     }
   },
     // this (optional) plugin enables Progressive Web App + Offline functionality

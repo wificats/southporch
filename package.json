@@ -12,15 +12,19 @@
     "gatsby-plugin-manifest": "^2.0.25",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-source-rss-feed": "^1.1.1",
     "gatsby-transformer-sharp": "^2.1.17",
+    "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-audio-player": "^0.11.0",
+    "react-cassette-player": "^1.1.2",
     "react-dom": "^16.8.5",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-responsive-audio-player": "^1.5.0"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
