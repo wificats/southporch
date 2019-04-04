@@ -60,7 +60,8 @@ export default( { data } ) => {
         autoplayDelayInSeconds={3}
         controls={[ 'playpause', 'backskip', 'forwardskip', 'volume', 'progress' ]}
         playlist={playls}
-        gap/>
+        gapLengthInSeconds={6}
+        />
       <MediaPlayer
         autoplay={true}
         controls={[ 'playpause', 'volume', 'forwardskip',  ]}

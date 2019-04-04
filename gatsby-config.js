@@ -26,6 +26,7 @@ module.exports = {
         theme_color: "#b73490",
         display: `standalone`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        crossOrigin: `use-credentials`,
       },
     },
     {

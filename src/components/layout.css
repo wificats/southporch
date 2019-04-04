@@ -10,7 +10,7 @@ body {
   background-image: url('/free-meals.gif');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   background-attachment: fixed;
 }
 article,
