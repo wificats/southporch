@@ -39,7 +39,7 @@ export default( { data } ) => {
 
   return ( <Layout >
 
-    <SEO title="southporch radio" keywords={[
+    <SEO title="SOUTHPORCH - cyberprop radio" keywords={[
         `radio`,
         `dirtbag`,
         `left`,
@@ -72,7 +72,7 @@ export default( { data } ) => {
 
     <div style={{
         marginTop: '1rem',
-        padding: '1rem'
+        padding: '2rem'
       }}>
       <h2>Playlist</h2>
       <table>
