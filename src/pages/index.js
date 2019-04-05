@@ -18,7 +18,8 @@ export default( { data } ) => {
     ...data.allFeedMajorityReport.edges,
     ...data.allFeedDumbBitch.edges,
     ...data.allFeedCurrentAffairs.edges,
-    ...data.allFeedPodDamn.edges
+    ...data.allFeedPodDamn.edges,
+    ...data.allFeedInterGalactic.edges
   ].sort( function( a, b ) {
     return new Date( b.node.isoDate ) - new Date( a.node.isoDate );
   } );
@@ -319,5 +320,24 @@ query {
     }
 
   }
+  allFeedInterGalactic(limit:3) {
+   totalCount
+   edges {
+     node {
+       title
+       isoDate
+       link
+       pubDate
+       enclosure {
+         url
+       }
+       contentSnippet
+       itunes {
+         author
+       }
+     }
+   }
+
+ }
 }
   `
