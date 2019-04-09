@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@cassette/core": "^2.0.0-alpha.31",
-    "@cassette/player": "^2.0.0-alpha.31",
+    "@cassette/core": "^2.0.0-alpha.33",
+    "@cassette/player": "^2.0.0-alpha.33",
     "gatsby": "^2.3.3",
     "gatsby-image": "^2.0.35",
     "gatsby-plugin-manifest": "^2.0.26",
