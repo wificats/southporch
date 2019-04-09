@@ -12,6 +12,7 @@ body {
   background-repeat: no-repeat;
   background-position: top;
   background-attachment: fixed;
+  hyphens: auto;
 }
 article,
 aside,

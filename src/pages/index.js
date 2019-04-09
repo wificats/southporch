@@ -68,7 +68,7 @@ export default( { data } ) => {
         controls={[ 'playpause', 'volume', 'forwardskip',  ]}
         playlist={somas}
         mediaElementRef={media => {
-          media.volume = 0.1
+        
         }}
         />
 
