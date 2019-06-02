@@ -15,13 +15,13 @@ export default( { data } ) => {
     ...data.allFeedTheAntifada.edges,
     ...data.allFeedChapoTrap.edges,
     ...data.allFeedTrillbillyWorkers.edges,
-    ...data.allFeedMajorityReport.edges,
+    ...data.allFeedQAnonAnon.edges,
     ...data.allFeedDumbBitch.edges,
     ...data.allFeedCurrentAffairs.edges,
     ...data.allFeedPodDamn.edges,
     ...data.allFeedInterGalactic.edges
   ].sort( function( a, b ) {
-    return new Date( b.node.isoDate ) - new Date( a.node.isoDate );
+    return new Date( b.node.pubDate ) - new Date( a.node.pubDate );
   } );
 
   const playls = feeds.map( e => ( { url: e.node.enclosure.url, title: e.node.title } ) )
@@ -68,7 +68,7 @@ export default( { data } ) => {
         controls={[ 'playpause', 'volume', 'forwardskip',  ]}
         playlist={somas}
         mediaElementRef={media => {
-        
+
         }}
         />
 
@@ -204,9 +204,7 @@ query {
           url
         }
         contentSnippet
-        itunes {
-          author
-        }
+
       }
     }
   }
@@ -248,7 +246,7 @@ query {
       }
     }
 
-  }   allFeedMajorityReport(limit:3) {
+  }   allFeedQAnonAnon(limit:3) {
     totalCount
     edges {
       node {

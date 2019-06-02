@@ -95,8 +95,8 @@ module.exports = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
-        url: `http://feeds.feedburner.com/majorityreport.rss`,
-        name: `MajorityReport`,
+        url: `http://feeds.soundcloud.com/users/soundcloud:users:492135420/sounds.rss`,
+        name: `QAnonAnon`,
     }
   },
     {
